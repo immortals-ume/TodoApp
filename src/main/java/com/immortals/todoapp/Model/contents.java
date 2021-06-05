@@ -10,51 +10,50 @@ public class contents {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ID;
+    private long id;
 
-    private String TOPIC;
-    private String CONTENT;
+    private String topic;
+    private String content;
 
     protected contents() {
     }
 
-    public contents(long ID, String TOPIC, String CONTENT) {
-        this.ID = ID;
-        this.TOPIC = TOPIC;
-        this.CONTENT = CONTENT;
+    public contents(long id, String topic, String content) {
+        this.id = id;
+        this.topic = topic;
+        this.content = content;
     }
 
-
-    public long getID() {
-        return ID;
+    public long getId() {
+        return id;
     }
 
-    public void setID(long ID) {
-        this.ID = ID;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getTOPIC() {
-        return TOPIC;
+    public String getTopic() {
+        return topic;
     }
 
-    public void setTOPIC(String TOPIC) {
-        this.TOPIC = TOPIC;
+    public void setTopic(String topic) {
+        this.topic = topic;
     }
 
-    public String getCONTENT() {
-        return CONTENT;
+    public String getContent() {
+        return content;
     }
 
-    public void setCONTENT(String CONTENT) {
-        this.CONTENT = CONTENT;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override
     public String toString() {
         return "contents{" +
-                "ID=" + ID +
-                ", TOPIC='" + TOPIC + '\'' +
-                ", CONTENT='" + CONTENT + '\'' +
+                "id=" + id +
+                ", topic='" + topic + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 }
