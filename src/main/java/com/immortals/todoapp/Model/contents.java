@@ -1,9 +1,7 @@
 package com.immortals.todoapp.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "contents")
 public class contents {
@@ -12,7 +10,12 @@ public class contents {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(name = "TOPIC")
+    @NotNull(message = "topic may not be null")
     private String topic;
+
+    @Column(name = "CONTENT")
+    @NotNull(message = "Content may not be null")
     private String content;
 
     protected contents() {
