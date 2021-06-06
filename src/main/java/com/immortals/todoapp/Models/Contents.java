@@ -1,32 +1,25 @@
 package com.immortals.todoapp.Models;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity(name = "contents")
-@Table(name = "contents")
 public class Contents implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @Column(name = "TOPIC")
     @NotNull(message = "ADD A TOPIC ")
-    @Max(20)
-    @Min(10)
     private String topic;
 
     @Column(name = "CONTENT")
     @NotNull(message = "Add the Contents")
-    @Max(200)
-    @Min(10)
     private String contents;
 
-    public Contents(Long id, String topic, String contents) {
+    public Contents(int id, String topic, String contents) {
         this.id = id;
         this.topic = topic;
         this.contents = contents;
@@ -36,11 +29,11 @@ public class Contents implements Serializable {
 
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

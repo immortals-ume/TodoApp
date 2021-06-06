@@ -4,10 +4,10 @@ import com.immortals.todoapp.Models.Contents;
 
 import java.util.List;
 
-public interface Content {
+public interface IContentService {
     List<Contents> getAllContents();
 
-    Contents getContentsByTopic(long id);
+    Contents getContentsByTopic(int id);
 
     Boolean addContentsByTopic(Contents contents);
 

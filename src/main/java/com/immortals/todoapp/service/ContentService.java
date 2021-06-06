@@ -10,10 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ContentService implements Content {
+public class ContentService implements IContentService {
 
     @Autowired
-    private ContentRepository contentRepository;
+    private final ContentRepository contentRepository;
+
+    public ContentService(ContentRepository contentRepository) {
+        this.contentRepository = contentRepository;
+    }
 
     @Override
     public List<Contents> getAllContents() {
@@ -23,8 +27,8 @@ public class ContentService implements Content {
     }
 
     @Override
-    public Contents getContentsByTopic(long id) {
-        return contentRepository.findById((int) id).orElse(null);
+    public Contents getContentsByTopic(int id) {
+        return contentRepository.findById(id).orElse(null);
     }
 
 
