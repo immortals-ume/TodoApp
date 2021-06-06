@@ -7,6 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ContentRepository extends CrudRepository<Contents, Integer> {
-    List<Contents> findByTopic(String topic);
-
+   List<Contents> findByTopic(String Topic);
 }

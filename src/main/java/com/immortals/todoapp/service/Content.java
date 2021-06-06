@@ -1,14 +1,17 @@
 package com.immortals.todoapp.service;
 
+import com.immortals.todoapp.Models.Contents;
+
 import java.util.List;
 
 public interface Content {
+    List<Contents> getAllContents();
 
-    List<String> getContents(int ID);
+    Contents getContentsByTopic(long id);
 
-    List<String> postContents(Object Object);
+    Boolean addContentsByTopic(Contents contents);
 
-    List<String> updateContents(int ID);
+    void updateContents(Contents contents);
 
-    void deleteContents(int ID);
+    void deleteContents(int id);
 }
